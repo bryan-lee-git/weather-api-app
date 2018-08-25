@@ -22,12 +22,14 @@ label {
 
 button {
     width:300px;
+    box-shadow: 3px 3px black;
 }
 
 #city-input {
     width:300px;
     margin:0 auto;
     text-align:center;
+    box-shadow: 3px 3px black;
 }
 
 #weatherForm {
