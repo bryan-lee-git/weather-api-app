@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+body {
+    font-family: 'Oswald', sans-serif;
+    text-align:center;
+    font-size:300%;
+    line-height:1.5;
+    font-weight:bold;
+    background-image: url(../images/background.gif);
+    background-repeat:no-repeat;
+    background-size:1000px; 
+    background-color: black;
+    margin-top: 50px;
+    background-position:top;
+}
