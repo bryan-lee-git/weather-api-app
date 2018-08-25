@@ -15,11 +15,6 @@ body {
     color: white;
 }
 
-form {
-    width:90%;
-    margin:0 auto;
-}
-
 label {
     color:white;
     margin-bottom:20px;
@@ -38,6 +33,9 @@ button {
 #weatherForm {
     margin-top: 280px;
     text-shadow: 3px 3px black;
+    width:90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #weatherStuff {
