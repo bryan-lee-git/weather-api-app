@@ -7,28 +7,30 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="./assets/css/styles.css">
-  <title>Weather Checker App!</title>
+  <title>Weather Checker App</title>
 </head>
 
 <body>
 
-  <div id="weatherForm" style="margin-top: 280px; text-shadow: 3px 3px black;">
-    <form style="width:90%; margin:0 auto;" method="post" onsubmit="submitWeather()">
+  <div id="weatherForm">
+    <form method="post" onsubmit="submitWeather()">
         <div class="form-group">
-          <label style="color:white;margin-bottom:20px;" for="city-input">What's the weather like in...<br></label>
-          <input style="width:300px;margin:0 auto;text-align:center;" type="text" class="form-control" id="city-input" placeholder="Format: 'City, State' or 'City, Country'">
+          <label for="city-input">What's the weather like in...<br></label>
+          <input type="text" class="form-control" id="city-input" placeholder="Format: 'City, State' or 'City, Country'">
         </div>
-        <button style="width:300px" id="weatherSubmit" type="submit" class="btn btn-primary">Submit</button>
+        <button id="weatherSubmit" type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>
 
-  <div style="width:90%;margin-left:auto;margin-right:auto;margin-top:210px;color:white; text-shadow: 3px 3px black;" id="weatherStuff">
+  <div id="weatherStuff">
     <div class="city"></div>
     <div class="wind"></div>
     <div class="temp"></div>
     <div class="humidity"></div>
     <div class="clouds"></div><br>
   </div>
+
+  <div class="footer navbar-fixed-bottom">A simple weather checker web app using the Open Weather Map API <br> Created by Bryan Lee in August 2018 | Copyright 2018</div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="./assets/javascript/app.js"></script>

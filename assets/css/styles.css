@@ -3,7 +3,7 @@
 body {
     font-family: 'Oswald', sans-serif;
     text-align:center;
-    font-size:300%;
+    font-size:28px;
     line-height:1.5;
     font-weight:bold;
     background-image: url(../images/background.gif);
@@ -12,4 +12,45 @@ body {
     background-color: black;
     margin-top: 50px;
     background-position:top;
+}
+
+form {
+    width:90%;
+    margin:0 auto;
+}
+
+label {
+    color:white;
+    margin-bottom:20px;
+}
+
+button {
+    width:300px;
+}
+
+#city-input {
+    width:300px;
+    margin:0 auto;
+    text-align:center;
+}
+
+#weatherForm {
+    margin-top: 280px;
+    text-shadow: 3px 3px black;
+}
+
+#weatherStuff {
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:210px;
+    color:white; 
+    text-shadow: 3px 3px black;
+}
+
+.footer {
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    opacity: 0.5;
 }
