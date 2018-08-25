@@ -25,6 +25,10 @@ button {
     box-shadow: 3px 3px black;
 }
 
+#errorBtn {
+    margin-top: 290px;
+}
+
 #city-input {
     width:300px;
     margin:0 auto;

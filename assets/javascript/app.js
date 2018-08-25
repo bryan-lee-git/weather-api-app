@@ -28,16 +28,12 @@ function getWeather(city) {
   var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=" + APIKey;
 
   //  Ajax API call
-  $.ajax({
-      //  set the API url
-      url: queryURL,
-      //  set the ajax method to "GET"
-      method: "GET"
-      //  then do this while promising to run the above API call until it is finished
-  }).then(function(weather) {
+  $.ajax({ url: queryURL, method: "GET" })
+    .then(function(weather) {
 
       //  Add weather objects not requiring special conversion to page
       $(".city").html("Location: " + weather.name);
+      $(".city").append(", " + weather.sys.country);
       $(".humidity").text("Humidity: " + weather.main.humidity + "%");
 
       //  Kelvin to Fahrenheit Converter
@@ -129,23 +125,39 @@ function getWeather(city) {
       
       //  Reveal the retrieved and treated data on the page
       $("#weatherStuff").show(1700);
-  });
+      console.log(weather);
 
-  //  Create 'new location' button for easy application reuse without page refresh
-  var newLocation = $("<button id='refreshBtn' class='btn btn-primary'>New Location</button>");
+      //  Create 'new location' button for easy application reuse without page refresh
+      var newLocation = $("<button id='refreshBtn' class='btn btn-primary'>New Location</button>");
 
-  //  Add the 'new location' button to the page after weather data
-  $("#weatherStuff").after(newLocation);
+      //  Add the 'new location' button to the page after weather data
+      $("#weatherStuff").after(newLocation);
+      
+      //  Immediately hide and then display button for page animation
+      newLocation.hide(0);
+      newLocation.fadeIn(1900);
+
+      //  Refresh button
+      $("#refreshBtn").on("click", function() {
+          // Reveal input form and hide the old data
+          $("#weatherStuff").fadeOut(1500);
+          $("#refreshBtn").fadeOut(1500);
+          $("#weatherForm").show(1500);
+      });
+  }).catch(function() {
+    var errorBtn = $("<button id='errorBtn' class='btn btn-primary'>No Data. Try Again</button>");
+
+    //  Add the 'new location' button to the page after weather data
+    $("#weatherStuff").after(errorBtn);
+    
+    //  Immediately hide and then display button for page animation
+    errorBtn.hide(0);
+    errorBtn.fadeIn(1900);
   
-  //  Immediately hide and then display button for page animation
-  newLocation.hide(0);
-  newLocation.fadeIn(1900);
-
-  //  Refresh button
-  $("#refreshBtn").on("click", function() {
-      // Reveal input form and hide the old data
-      $("#weatherStuff").fadeOut(1500);
-      $("#refreshBtn").fadeOut(1500);
-      $("#weatherForm").show(1500);
+    //  Refresh button
+    $("#errorBtn").on("click", function() {
+        // Reveal input form and hide the old data
+        location.reload();
+    });
   });
 };
